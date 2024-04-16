@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<groupId>com.example</groupId>
@@ -21,7 +22,7 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<spring-cloud.version>2023.0.1</spring-cloud.version>
 		<testcontainers.version>1.19.7</testcontainers.version>
-		<springdoc-openapi-starter.version>2.2.0</springdoc-openapi-starter.version>
+		<springdoc-openapi-starter.version>2.5.0</springdoc-openapi-starter.version>
 		<pitest.version>1.15.8</pitest.version>
 		<jacoco.version>0.8.9</jacoco.version>
 		<liquibase.version>4.19.1</liquibase.version>
@@ -68,7 +69,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -77,11 +78,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
-			<version>${liquibase.version}</version>
-        </dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -134,7 +130,7 @@
 					<profiles>local</profiles>
 				</configuration>
 			</plugin>
-			 <plugin>
+			<plugin>
 				<groupId>org.pitest</groupId>
 				<artifactId>pitest-maven</artifactId>
 				<version>${pitest.version}</version>
@@ -150,7 +146,7 @@
 					<failWhenNoMutations>false</failWhenNoMutations>
 					<timestampedReports>false</timestampedReports>
 					<mutators>ALL</mutators>
-					<verbose>true</verbose>  
+					<verbose>true</verbose>
 				</configuration>
 				<executions>
 					<execution>
@@ -205,17 +201,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.liquibase</groupId>
-				<artifactId>liquibase-maven-plugin</artifactId>
-				<version>${liquibase.version}</version>
-				<configuration>
-					<outputChangeLogFile>src/main/resources/db/changelog/db.changelog-master.yaml</outputChangeLogFile>
-					<url>jdbc:postgresql://localhost:5432/db</url>
-					<username>user</username>
-					<password>password</password>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
