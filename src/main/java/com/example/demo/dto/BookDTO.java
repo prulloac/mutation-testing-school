@@ -1,7 +1,7 @@
 package com.example.demo.dto;
 
 public record BookDTO(
-    int id, 
+    Integer id, 
     String franchise, 
     String title, 
     String author, 

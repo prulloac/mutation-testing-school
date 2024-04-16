@@ -2,6 +2,7 @@ package com.example.demo.rest;
 
 import java.util.Collection;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 import com.example.demo.service.RepositoryService;
@@ -15,7 +16,9 @@ public interface GenericController<E, D, I> {
 
     default ResponseEntity<String> deleteById(I id) {
         getService().deleteById(id);
-        return ResponseEntity.status(204).body("Deleted");
+        return ResponseEntity.status(204).contentType(MediaType.APPLICATION_JSON).body("""
+        {"status": "Deleted"}
+        """);
     }
 
     default ResponseEntity<D> findById(I id) {

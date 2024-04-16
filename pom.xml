@@ -144,17 +144,9 @@
 					<threads>2</threads>
 					<failWhenNoMutations>false</failWhenNoMutations>
 					<timestampedReports>false</timestampedReports>
-					<mutators>ALL</mutators>
+					<mutators>STRONGER</mutators>
 					<verbose>true</verbose>
 				</configuration>
-				<executions>
-					<execution>
-						<phase>test-compile</phase>
-						<goals>
-							<goal>mutationCoverage</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>

@@ -1,7 +1,7 @@
 package com.example.demo.dto;
 
 public record GameDTO(
-    int id,
+    Integer id,
     String franchise,
     String title,
     String developer,
