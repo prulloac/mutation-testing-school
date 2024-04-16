@@ -30,14 +30,8 @@ public class Franchise {
     private String name;
 
     @OneToMany(mappedBy = "franchise")
-    private Collection<Movie> movies;
-
-    @OneToMany(mappedBy = "franchise")
     private Collection<Book> books;
 
     @OneToMany(mappedBy = "franchise")
     private Collection<Game> games;
-
-    @OneToMany(mappedBy = "franchise")
-    private Collection<Series> shows;
 }

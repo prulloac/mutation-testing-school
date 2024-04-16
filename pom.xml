@@ -25,7 +25,6 @@
 		<springdoc-openapi-starter.version>2.5.0</springdoc-openapi-starter.version>
 		<pitest.version>1.15.8</pitest.version>
 		<jacoco.version>0.8.9</jacoco.version>
-		<liquibase.version>4.19.1</liquibase.version>
 	</properties>
 
 
