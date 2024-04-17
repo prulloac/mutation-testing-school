@@ -31,15 +31,7 @@ public class GameService extends ItemService<Game, GameDTO> {
 
     @Override
     public GameDTO toDTO(Game entity) {
-        return new GameDTO(entity.getId(), 
-            entity.getFranchise().getName(), 
-            entity.getName(), 
-            entity.getDeveloper().getName(), 
-            entity.getPublisher().getName(), 
-            entity.getCategory(), 
-            entity.getReleaseDate().getYear(), 
-            entity.getInstallment(), 
-            entity.getStatus().name());
+        return new GameDTO(entity);
     }
 
     @Override

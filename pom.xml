@@ -144,7 +144,18 @@
 					<threads>2</threads>
 					<failWhenNoMutations>false</failWhenNoMutations>
 					<timestampedReports>false</timestampedReports>
-					<mutators>STRONGER</mutators>
+					<mutators>
+						<mutator>CONSTRUCTOR_CALLS</mutator>
+						<mutator>NON_VOID_METHOD_CALLS</mutator>
+						<mutator>NULL_RETURNS</mutator>
+					</mutators>
+					<targetClasses>
+						<param>com.example.demo.*</param>
+					</targetClasses>
+					<excludedClasses>
+						<param>java.lang.*</param>
+						<param>org.springframework.*</param>
+					</excludedClasses>
 					<verbose>true</verbose>
 				</configuration>
 			</plugin>

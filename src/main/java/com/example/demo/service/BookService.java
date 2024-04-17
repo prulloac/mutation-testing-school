@@ -30,15 +30,7 @@ public class BookService extends ItemService<Book, BookDTO> {
 
     @Override
     public BookDTO toDTO(Book entity) {
-        return new BookDTO(entity.getId(), 
-            entity.getFranchise().getName(), 
-            entity.getName(), 
-            entity.getAuthor().getName(), 
-            entity.getCategory(), 
-            entity.getPublisher(), 
-            entity.getReleaseDate().getYear(), 
-            entity.getIsbn(), 
-            entity.getStatus().name());
+        return new BookDTO(entity);
     }
 
     @Override
